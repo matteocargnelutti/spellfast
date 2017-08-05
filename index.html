@@ -1,0 +1,286 @@
+<!DOCTYPE HTML> 
+<html lang="en"> 
+<head> 
+
+	<title>Spell Fast ! - Prototype</title>
+	<meta charset="UTF-8" />
+	<meta id="viewport" name="viewport" content="width=device-width,user-scalable=no,initial-scale=1" />
+	<meta name="google" value="notranslate"/>
+	
+	<!-- WEB APP CONTENT -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	
+	<link rel="icon" sizes="192x192" href="img/icon192x.png" />
+	<link rel="icon" sizes="128x128" href="img/icon128x.png" />
+	<link rel="apple-touch-icon" sizes="128x128" href="img/icon192x.png">
+	<link rel="apple-touch-icon-precomposed" sizes="128x128" href="img/icon128x.png">
+	
+	<!-- FAVICON -->
+	<link rel="icon" type="image/png" href="img/icon128x.png" />
+	
+	<!-- STYLE -->
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/response.css"/>
+	
+	<!-- LIBS -->
+	<script type="text/javascript" src="libs/jquery.min.js"></script>	
+	<script type="text/javascript" src="libs/jquery.jtap.js"></script>
+	<script type="text/javascript" src="libs/howler.min.js"></script>
+	
+	<!--        -->
+	<!-- SCRIPT -->
+	<!--        -->
+	
+	<!-- GLOBALS -->
+	<script type="text/javascript">
+	// Global handler
+	var app = {}; 
+	</script>
+	
+	<!-- GENERAL -->
+	<script type="text/javascript" src="js/general/tools.js"></script>
+	<script type="text/javascript" src="js/general/sound.js"></script>
+	<script type="text/javascript" src="js/general/resolution.js"></script>
+	<script type="text/javascript" src="js/general/bestscore.js"></script>
+	
+	<!-- SCREENS -->
+	<script type="text/javascript" src="js/screens/menu.js"></script>
+	<script type="text/javascript" src="js/screens/match.js"></script>
+	<script type="text/javascript" src="js/screens/gameover.js"></script>
+	<script type="text/javascript" src="js/screens/help.js"></script>
+	
+	<!-- TRUNK -->
+	<script type="text/javascript" src="js/game.js"></script>
+	
+</head>
+
+<body>
+
+    <!--                   -->
+    <!-- LANDSCAPE ALERT   -->
+    <!--                   -->
+    <div id="landscape-alert">
+    
+        <div class="container">
+            <p>Please hold your device on portrait mode.</p>
+            <img src="img/phone.png" alt=""/>
+        </div>
+    
+    </div>
+    
+    
+    <!--                -->
+    <!-- LOADING ALERT  -->
+    <!--                -->
+    <div id="loading-alert">
+    
+        <div class="container">
+            <p>Loading</p>
+            <img src="img/time.png" alt=""/>
+        </div>
+    
+    </div>
+    
+    
+    <!--                    -->
+    <!-- PLAYABLE GAME PART -->
+    <!--                    -->
+    <div class="playable-container">
+        
+        <!--              -->
+        <!-- MENU SCREEN  -->
+        <!--              -->
+        <div class="screen" id="menu-screen">
+        
+            <div class="title">
+            
+                <div class="letters-row  row1">
+                    <span class="letter"><i>S</i></span>
+                    <span class="letter"><i>P</i></span>
+                    <span class="letter"><i>E</i></span>
+                    <span class="letter"><i>L</i></span>
+                    <span class="letter"><i>L</i></span>
+                </div>
+                
+                <div class="letters-row row2">
+                    <span class="letter"><i>F</i></span>
+                    <span class="letter"><i>A</i></span>
+                    <span class="letter"><i>S</i></span>
+                    <span class="letter"><i>T</i></span>
+                    <span class="letter"><i>!</i></span>
+                </div>
+            
+            </div>
+            
+            <div class="switches">
+            
+                <div class="switch play">Play !</div>
+                <div class="switch sound">Sound : On</div>
+                <div class="switch bestscore">Best : <span>0</span></div>
+                <div class="switch help">Help</div>
+            
+            </div>
+        
+        </div>
+        
+        
+        <!--               -->
+        <!-- MATCH SCREEN  -->
+        <!--               -->
+        <div class="screen" id="match-screen">  
+        
+            <!-- SOUND SWITCH -->
+            <div class="sound switch">
+                <img src="img/sound.png" alt=""/>
+            </div> 
+            
+            <!--                -->
+            <!-- WORD TO GUESS  -->
+            <!--                -->
+            <div class="word-to-guess">
+            
+                <span class="letter inactive" id="letter1"><i>?</i></span>
+                <span class="letter inactive" id="letter2"><i>?</i></span>
+                <span class="letter inactive" id="letter3"><i>?</i></span>
+                <span class="letter inactive hidden" id="letter4"><i></i></span>
+                <span class="letter inactive hidden" id="letter5"><i></i></span>
+            
+            </div>
+            
+            
+            <!--          -->
+            <!-- KEYBOARD -->
+            <!--          -->
+            <table class="keyboard">
+            
+                <tr class="row row1">
+                    <td class="key" id="key1">?</td>
+                    <td class="key" id="key2">?</td>
+                    <td class="key" id="key3">?</td>
+                    <td class="key" id="key4">?</td>
+                </tr>
+                
+                <tr class="row row2">
+                    <td class="key" id="key5">?</td>
+                    <td class="key" id="key6">?</td>
+                    <td class="key" id="key7">?</td>
+                    <td class="key" id="key8">?</td>
+                </tr>
+                
+                <tr class="row row3">
+                    <td class="key" id="key9">?</td>
+                    <td class="key" id="key10">?</td>
+                    <td class="key" id="key11">?</td>
+                    <td class="key" id="key12">?</td>
+                </tr>
+                
+                <tr class="row row4">
+                    <td class="key" id="key13">?</td>
+                    <td class="key" id="key14">?</td>
+                    <td class="key" id="key15">?</td>
+                    <td class="key" id="key16">?</td>
+                </tr>
+            
+            </table>
+            
+            
+            <!--     -->
+            <!-- HUD -->
+            <!--     -->
+            <div class="hud">
+            
+                <span class="score">SCORE : <b>0</b></span>
+                <span class="time">TIME : <b>0.0</b></span>
+            
+            </div>
+            
+        </div>
+        
+        
+        <!--                   -->
+        <!-- GAME OVER SCREEN  -->
+        <!--                   -->
+        <div class="screen" id="gameover-screen">   
+        
+            <!-- SOUND SWITCH -->
+            <div class="sound switch">
+                <img src="img/sound.png" alt=""/>
+            </div> 
+        
+            <div class="title">
+            
+                <div class="letters-row  row1">
+                    <span class="letter"><i>G</i></span>
+                    <span class="letter"><i>A</i></span>
+                    <span class="letter"><i>M</i></span>
+                    <span class="letter"><i>E</i></span>
+                </div>
+                
+                <div class="letters-row row2">
+                    <span class="letter"><i>O</i></span>
+                    <span class="letter"><i>V</i></span>
+                    <span class="letter"><i>E</i></span>
+                    <span class="letter"><i>R</i></span>
+                </div>
+            
+            </div>
+            
+            <div class="infos">
+                <p>Your score : <span class="score">0</span></p>
+                <p>Best &nbsp;score : <span class="bestscore">0</span></p>
+            </div>
+            
+            <div class="switches">
+                <div class="switch retry">Retry</div>
+                <div class="switch quit">Quit</div>
+            </div>
+        
+        </div>
+        
+        
+        <!--                   -->
+        <!-- HELP SCREEN  -->
+        <!--                   -->
+        <div class="screen" id="help-screen">   
+        
+            <div class="title">
+            
+                <div class="letters-row  row1">
+                    <span class="letter"><i>H</i></span>
+                    <span class="letter"><i>E</i></span>
+                    <span class="letter"><i>L</i></span>
+                    <span class="letter"><i>P</i></span>
+                </div>
+            
+            </div>
+            
+            <div class="infos">
+                
+                <p>
+                <span>TAP</span> on the mixed letters to spell the word displayed on top of the screen.
+                </p>
+                
+                <p>
+                <span>But be careful :</span> you have a few seconds to do it, and a letter can be tapped-on only one time per second.
+                </p>
+                
+                <p>
+                &copy;2015 - Matteo Cargnelutti</a>
+                </p>
+                
+            </div>
+            
+            <div class="switches">
+                <div class="switch play">Play</div>
+                <div class="switch quit">Return</div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+</body>
+
+</html>

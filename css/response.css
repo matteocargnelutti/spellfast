@@ -1,0 +1,462 @@
+/**
+ * Spell Fast
+ *
+ * 2015 - Matteo Cargnelutti (mail@elseif.eu)
+ * See GITHUB.COM/MATTEOCARGNELUTTI
+ *
+ *
+ * RESPONSE.CSS - RESPONSE
+*/
+
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* > 1024px */
+
+@media (min-width: 1024px) {
+
+    body {
+        background-image: url('../img/bck.jpg');
+    }
+    
+    .switch,
+    .key {
+        cursor: pointer;
+    }
+
+    #landscape-alert .container {
+        margin-top: 200px;
+    }
+
+}
+
+/* END - DESKTOP > 1024px */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* DEVICE < 320x480 : HEIGHT UNDER 480 */
+
+@media (max-height: 480px) {
+
+    /* LOADING ALERT */
+    #loading-alert .container {
+        margin-top: 140px;
+    }
+
+    /* PLAYABLE CONTAINER */
+    .playable-container {
+        width: 320px;
+        height: 420px;
+    }
+    
+    /* MENU SCREEN */
+    #menu-screen .title {
+        margin-top: 30px;
+    }
+    
+    /* MATCH SCREEN */
+    #match-screen .word-to-guess {
+        top: 45px;
+    }
+    
+    #match-screen .keyboard {
+        top: 120px;
+    }
+    
+    #match-screen .hud {
+        bottom: 15px;
+    }
+    
+    #match-screen .sound {
+        top: 5px;
+        right: 5px;
+    }
+    
+    /* GAME OVER SCREEN */
+    #gameover-screen .sound {
+        top: 5px;
+        right: 5px;
+    }
+    
+    #gameover-screen .title {
+        margin-top: 50px;
+    }
+    
+    #gameover-screen .infos {
+        top: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    /* HELP SCREEN */
+    #help-screen .infos {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+}
+/* END - DEVICE < 320x480 : HEIGHT UNDER 480 */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* DEVICE > 480x720 : 480x720 (Scale*1.5) */
+
+@media (min-width: 480px) and (min-height: 720px) {
+
+    /* LETTERS */
+    .letter {
+        width: 72px;
+        height: 72px;
+        line-height: 72px;
+        
+        font-size: 54px;
+    }
+    
+    /* LANDSCAPE ALERT */
+    #landscape-alert .container {
+        margin-top: 30px;
+        font-size: 48px;
+    }
+    
+    #landscape-alert .container p {
+        margin-bottom: 30px;
+    }
+    
+    #landscape-alert .container img {
+        width: 128px;
+    }
+    
+    /* LOADING ALERT */
+    #loading-alert .container {
+        margin-top: 330px;
+        font-size: 40px;
+    }
+    
+    #loading-alert .container p {
+        margin-bottom: 20px;
+    }
+    
+    #loading-alert .container img {
+        width: 64px;
+    }
+    
+    /* PLAYABLE CONTAINER */
+    .playable-container {
+        width: 480px;
+        height: 720px;
+    }
+    
+    /* MENU */
+    #menu-screen .title {
+        margin-top: 75px;
+    }
+    
+    #menu-screen .switches {
+        bottom: 15px;
+    }
+    
+    #menu-screen .switches .switch {
+        margin-bottom: 15px;
+        margin-left: 22px;
+        margin-right: 7px;
+        padding: 18px;
+
+        font-size: 27px;
+    }
+    
+    /* MATCH SCREEN */
+    #match-screen .word-to-guess {
+        top: 90px;
+    }
+    
+    #match-screen .keyboard {
+        top: 225px;
+    }
+    
+    #match-screen .keyboard .key {
+        height: 75px;  
+        font-size: 27px;
+    }
+    
+    #match-screen .hud {
+        font-size: 27px;
+    }
+    
+    #match-screen .hud span {
+        padding-left: 20px;
+    }
+    
+    #match-screen .sound {
+        width: 48px;
+        height: 48px;
+        top: 7px;
+        right: 10px;
+    }
+    
+    #match-screen .sound img {
+        width: 30px;
+        top: 8px;
+        left: 2px;
+    }
+    
+    /* GAME OVER SCREEN */
+    #gameover-screen .sound {
+        width: 48px;
+        height: 48px;
+        top: 7px;
+        right: 10px;
+    }
+    
+    #gameover-screen .sound img {
+        width: 30px;
+        top: 8px;
+        left: 2px;
+    }
+    
+    #gameover-screen .title {
+        margin-top: 105px;
+    }
+    
+    #gameover-screen .infos {
+        top: 60px;
+      
+        font-size: 27px;
+        
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    #gameover-screen .switches {
+        bottom: 15px;
+    }
+    
+    #gameover-screen .switches .switch {
+        margin-bottom: 15px;
+        margin-left: 22px;
+        margin-right: 7px;
+        padding: 18px;
+
+        font-size: 27px;
+    }
+    
+    /* HELP SCREEN */
+    #help-screen .title {
+        margin-top: 30px;
+    }
+    
+    #help-screen .infos {
+        margin-top: 45px;
+      
+        font-size: 24px;
+        
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    #help-screen .infos p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    #help-screen .switches {
+        bottom: 15px;
+    }
+    
+    #help-screen .switches .switch {
+        margin-bottom: 15px;
+        margin-left: 22px;
+        margin-right: 7px;
+        padding: 18px;
+
+        font-size: 27px;
+    }
+
+}
+
+/* END - DEVICE > 480x720 : 480x720 (Scale*1.5) */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* DEVICE > 640x960 : 640x960 (Scale*2) */
+
+@media (min-width: 640px) and (min-height: 960px) {
+
+    /* LETTERS */
+    .letter {
+         width: 96px;
+        height: 96px;
+        line-height: 96px;
+        
+        font-size: 72px;
+    }
+    
+    /* LANDSCAPE ALERT */
+    #landscape-alert .container {
+        margin-top: 20px;
+        font-size: 64px;
+    }
+    
+    #landscape-alert .container p {
+        margin-bottom: 40px;
+    }
+    
+    #landscape-alert .container img {
+        width: 128px;
+    }
+    
+    /* LOADING ALERT */
+    #loading-alert .container {
+        margin-top: 430px;
+        font-size: 60px;
+    }
+    
+    #loading-alert .container p {
+        margin-bottom: 40px;
+    }
+    
+    #loading-alert .container img {
+        width: 64px;
+    }
+    
+    /* PLAYABLE CONTAINER */
+    .playable-container {
+        width: 640px;
+        height: 960px;
+    }
+    
+    /* MENU */
+    #menu-screen .title {
+        margin-top: 100px;
+    }
+    
+    #menu-screen .switches {
+        bottom: 20px;
+    }
+    
+    #menu-screen .switches .switch {
+        margin-bottom: 20px;
+        margin-left: 30px;
+        margin-right: 10px;
+        padding: 24px;
+
+        font-size: 36px;
+    }
+    
+    /* MATCH SCREEN */
+    #match-screen .word-to-guess {
+        top: 120px;
+    }
+    
+    #match-screen .keyboard {
+        top: 310px;
+    }
+    
+    #match-screen .keyboard .key {
+        height: 100px;  
+        font-size: 36px;
+    }
+    
+    #match-screen .hud {
+        font-size: 36px;
+    }
+    
+    #match-screen .sound {
+        width: 64px;
+        height: 64px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    #match-screen .sound img {
+        width: 40px;
+        top: 13px;
+        left: 1px;
+    }
+    
+    /* GAME OVER SCREEN */
+    #gameover-screen .sound {
+        width: 64px;
+        height: 64px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    #gameover-screen .sound img {
+        width: 40px;
+        top: 13px;
+        left: 1px;
+    }
+    
+    #gameover-screen .title {
+        margin-top: 140px;
+    }
+    
+    #gameover-screen .infos {
+        top: 80px;
+      
+        font-size: 36px;
+        
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    #gameover-screen .switches {
+        bottom: 20px;
+    }
+    
+    #gameover-screen .switches .switch {
+        margin-bottom: 20px;
+        margin-left: 30px;
+        margin-right: 10px;
+        padding: 24px;
+
+        font-size: 36px;
+    }
+    
+    /* HELP SCREEN */
+    #help-screen .title {
+        margin-top: 40px;
+    }
+    
+    #help-screen .infos {
+        margin-top: 80px;
+      
+        font-size: 32px;
+        
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    #help-screen .infos p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    #help-screen .switches {
+        bottom: 20px;
+    }
+    
+    #help-screen .switches .switch {
+        margin-bottom: 20px;
+        margin-left: 30px;
+        margin-right: 10px;
+        padding: 24px;
+        font-size: 36px;
+    }
+
+}
+
+/* END - DEVICE > 640x960 : 640x960 (Scale*2)  */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/

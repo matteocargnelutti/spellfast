@@ -1,0 +1,762 @@
+/**
+ * Spell Fast
+ *
+ * 2015 - Matteo Cargnelutti (mail@elseif.eu)
+ * See GITHUB.COM/MATTEOCARGNELUTTI
+ *
+ *
+ * MAIN.CSS - MAIN STYLESHEET
+*/
+
+/**
+ * Fontes
+ *
+*/
+@import url('../fonts/arvo/stylesheet.css');
+
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* GLOBAL */
+
+html {
+    overflow: hidden;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100%;
+    padding: 0px;
+    margin: 0px;
+    outline: 0px;  
+    overflow: hidden;
+    
+    position: relative;
+    
+    background-color: black;
+
+    background-image: url('../img/bck-min.jpg');
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+/* Disable highlight */
+* {
+    tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* END - GLOBAL */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* GENERIC ANIMATIONS */
+
+/* BOUNCE */
+@keyframes bounce {
+    0% { transform: translate(0px,0px); }
+    50% { transform: translate(0px,-5px); }
+    100% { transform: translate(0px,0px); }
+}
+
+@-webkit-keyframes bounce {
+    0% { -webkit-transform: translate(0px,0px); }
+    50% { -webkit-transform: translate(0px,-5px); }
+    100% { -webkit-transform: translate(0px,0px); }
+}
+
+/* SPIN */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    50% { -webkit-transform: rotate(180deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+/* BACKGROUND COLOR CHANGE */
+@keyframes background-color-change {
+    0% { background-color: #f16060; }
+    50% { background-color: #60e2f1; }
+    100% { background-color: #ec60f1; }    
+}
+
+@-webkit-keyframes background-color-change {
+    0% { background-color: #f16060; }
+    50% { background-color: #60e2f1; }
+    100% { background-color: #ec60f1; }    
+}
+
+/* OPACITY */
+@keyframes set-visible {
+    0% { opacity: 0; }
+    100% { opacity: 1; }    
+}
+
+@-webkit-keyframes set-visible {
+    0% { opacity: 0; }
+    100% { opacity: 1; }    
+}
+
+/* SCREEN SLIDE */
+@keyframes screen-slide {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(0px,101%) }  
+}
+
+@-webkit-keyframes screen-slide {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(0px,101%) }   
+}
+
+/* END - GENERIC ANIMATIONS */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* LETTERS */
+
+.letter {
+    display: inline-block;
+    
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    
+    font-size: 36px;
+    vertical-align: middle;
+    
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    
+    background-color: white;
+    
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #cccccc;
+    border-radius: 5px;
+    
+    position: relative;
+}
+
+.letter.inactive i {
+    color: #9c9c9c;
+}
+
+.letter i {
+    font-family: 'Arvo', 'Georgia';
+    color: #323131;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-style: normal;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* END - LETTERS */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* LANDSCAPE ALERT */
+
+#landscape-alert {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    background-color: black;
+    
+    text-align: center;
+    
+    display: none;
+    
+    z-index: 100;
+}
+
+#landscape-alert .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    
+    color: white;
+    font-size: 32px;
+    font-family: 'Arvo', 'Georgia';
+}
+
+#landscape-alert .container p {
+    margin-bottom: 20px;
+}
+
+#landscape-alert .container img {
+    width: 128px;
+    
+    -webkit-animation: bounce 0.5s infinite;
+    animation: bounce 0.5s infinite;
+}
+
+/* END - LANDSCAPE ALERT */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* LOADING ALERT */
+
+#loading-alert {
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    background-color: black;
+    
+    text-align: center;
+    
+    z-index: 90;
+}
+
+#loading-alert.hidden {
+    -webkit-animation: loading-slide 0.5s forwards;
+    animation: loading-slide 0.5s forwards;
+}
+
+@keyframes loading-slide {
+    0% { transform: translate(0px,0px) }
+    100% { transform: translate(101%,0px) }  
+}
+
+@-webkit-keyframes loading-slide {
+    0% { -webkit-transform: translate(0px,0px) }
+    100% { -webkit-transform: translate(101%,0px) }   
+}
+
+#loading-alert .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 200px;
+    
+    color: white;
+    font-size: 40px;
+    font-family: 'Arvo', 'Georgia';
+}
+
+#loading-alert .container p {
+    margin-bottom: 20px;
+}
+
+#loading-alert .container img {
+    width: 64px;
+    
+    -webkit-animation: spin 1s infinite;
+    animation: spin 1s infinite;
+}
+
+/* END - LOADING ALERT */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* PLAYABLE CONTAINER */
+
+/* CONTAINER */
+.playable-container {
+    width: 320px;
+    height: 480px;
+    
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* SCREENS */
+.screen {
+    
+}
+
+/* END - PLAYABLE CONTAINER */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* MENU SCREEN */
+
+.screen#menu-screen {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -101%;
+    left: 0px;
+}
+
+#menu-screen.visible {
+    -webkit-animation: screen-slide 0.7s forwards;
+    animation: screen-slide 0.7s forwards;
+}
+
+/* TITLE */
+#menu-screen .title {
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* SWITCHES */
+#menu-screen .switches {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+
+#menu-screen .switches .switch {
+    width: 35%;
+    float: left;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 5px;
+    padding: 12px;
+    text-align: center;
+    
+    border-radius: 10px;
+    
+    color: black;
+    font-family: 'Arvo',cursive;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+    background-color: white;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #cccccc;
+    border-radius: 5px;
+        
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+#menu-screen .switches .switch.play {
+    color: white;
+    background-color: #ee5454;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #711c1c;
+    border-radius: 5px;
+}
+
+/* END - MENU SCREEN */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* MATCH SCREEN */
+
+.screen#match-screen {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -101%;
+    left: 0px;
+}
+
+#match-screen.visible {
+    -webkit-animation: screen-slide 0.7s forwards;
+    animation: screen-slide 0.7s forwards;
+}
+
+/* WORD TO GUESS */
+#match-screen .word-to-guess {
+    width: 100%;
+    
+    position: absolute;
+    top: 75px;
+    
+    text-align: center;
+    
+    -webkit-animation: bounce 0.5s infinite;
+    animation: bounce 0.5s infinite;
+}
+
+#match-screen .word-to-guess .letter.hidden {
+    display: none;
+}
+
+#match-screen .word-to-guess .letter i {
+    
+}
+
+/* KEYBOARD */
+#match-screen .keyboard {
+    width: 95%;
+    overflow: hidden;
+    
+    position: absolute;
+    top: 170px;
+    left: 2.5%;
+}
+
+#match-screen .keyboard .key {
+    height: 50px;
+    width: 25%;
+    
+    text-align: center;
+    vertical-align: middle;
+    
+    font-size: 18px;
+    font-family: 'Arvo', 'Georgia';
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-style: normal;
+    
+    background-color: #5c5c5c;
+}
+
+#match-screen .keyboard .key.good {
+     background-color: #60e2f1;
+}
+
+#match-screen .keyboard .key.bad {
+    background-color: #f16360;
+}
+
+/* HUD */
+#match-screen .hud {
+    width: 95%;
+    
+    position: absolute;
+    left: 2.5%;
+    bottom: 0px;
+    
+    font-family: 'Arvo',cursive;
+    font-size: 18px;
+    
+    border-radius: 10px;
+    
+    background-color: #ee5454;
+    border-bottom: 3px solid;
+    border-color: #711c1c;
+    color: white; 
+    
+    overflow: hidden;
+}
+
+#match-screen .hud span {
+    display: block;
+    float: left;
+    padding: 10px;
+}
+
+#match-screen .hud span.score {
+    width: 50%;
+}
+
+#match-screen .hud span.time {
+    float: right;
+    margin-right: 10px;
+}
+
+/* SOUND SWITCH */
+#match-screen .sound {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    
+    border-radius: 10px;
+
+    background-color: #ee5454;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #711c1c;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#match-screen .sound.disabled {
+    background-color: #be1414;
+}
+
+#match-screen .sound img {
+    width: 20px;
+    position: relative;
+    top: 5px;
+    left: 1px;
+}
+
+/* END - MATCH SCREEN */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* GAME OVER SCREEN */
+
+.screen#gameover-screen {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -101%;
+    left: 0px;
+}
+
+#gameover-screen.visible {
+    -webkit-animation: screen-slide 0.7s forwards;
+    animation: screen-slide 0.7s forwards;
+}
+
+/* SOUND SWITCH */
+#gameover-screen .sound {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    
+    border-radius: 10px;
+
+    background-color: #ee5454;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #711c1c;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#gameover-screen .sound.disabled {
+    background-color: #be1414;
+}
+
+#gameover-screen .sound img {
+    width: 20px;
+    position: relative;
+    top: 5px;
+    left: 1px;
+}
+
+/* TITLE */
+#gameover-screen .title {
+    width: 100%;
+    margin: auto;
+    margin-top: 70px;
+    text-align: center;
+}
+
+/* INFO */
+#gameover-screen .infos {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+    position: relative;
+    top: 40px;
+  
+    color: white;
+    font-family: 'Arvo',cursive;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    background-image: url('../img/black70.png');
+}
+
+#gameover-screen .infos p {
+}
+
+#gameover-screen .infos p span {
+    color: #ee5454;
+}
+
+/* SWITCHES */
+#gameover-screen .switches {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+
+#gameover-screen .switches .switch {
+    width: 35%;
+    float: left;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 5px;
+    padding: 12px;
+    text-align: center;
+    
+    border-radius: 10px;
+    
+    color: black;
+    font-family: 'Arvo',cursive;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+    background-color: white;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #cccccc;
+    border-radius: 5px;
+        
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+#gameover-screen .switches .switch.retry {
+    color: white;
+    background-color: #ee5454;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #711c1c;
+    border-radius: 5px;
+}
+
+/* END - GAME OVER SCREEN */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
+/* HELP SCREEN */
+
+.screen#help-screen {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -101%;
+    left: 0px;
+}
+
+#help-screen.visible {
+    -webkit-animation: screen-slide 0.7s forwards;
+    animation: screen-slide 0.7s forwards;
+}
+
+/* TITLE */
+#help-screen .title {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* INFO */
+#help-screen .infos {
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+  
+    color: white;
+    font-family: 'Arvo',cursive;
+    text-transform: uppercase;
+    font-size: 16px;
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    background-image: url('../img/black70.png');
+}
+
+#help-screen .infos p {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 1em;
+}
+
+#help-screen .infos p span {
+    color: #ee5454;
+}
+
+#help-screen .infos p a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* SWITCHES */
+#help-screen .switches {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+
+#help-screen .switches .switch {
+    width: 35%;
+    float: left;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 5px;
+    padding: 12px;
+    text-align: center;
+    
+    border-radius: 10px;
+    
+    color: black;
+    font-family: 'Arvo',cursive;
+    text-transform: uppercase;
+    font-size: 18px;
+    
+    background-color: white;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #cccccc;
+    border-radius: 5px;
+        
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+#help-screen .switches .switch.play {
+    color: white;
+    background-color: #ee5454;
+    border-right: 2px solid;
+    border-bottom: 3px solid;
+    border-color: #711c1c;
+    border-radius: 5px;
+}
+
+/* END - HELP SCREEN */
+/*____________________________________________________________________________*/
+
+
+
+/*____________________________________________________________________________*/
