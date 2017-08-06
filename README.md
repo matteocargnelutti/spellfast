@@ -5,7 +5,7 @@
 A little prototype for a spelling / typing HTML5 game from back in early 2015.
 
 The game is entirely made with HTML5 / CSS3 / JS, relying on DOM elments and CSS animations.
-It is also built on responsive design and should work pretty much everywhere.
+It is also built on mobile-first responsive design and should work pretty much everywhere.
 
 2015, Matteo Cargnelutti (mail@elseif.eu)
 
